@@ -1,0 +1,47 @@
+# Turinio ribojimo sistema mokyklos bevieliui – paleidimas: docker compose up -d --build
+# Sistema:     http://localhost:8080
+# phpMyAdmin:  http://localhost:8001  (vartotojas stud / stud)
+services:
+  mysql:
+    build:
+      context: .
+      dockerfile: dockermysql
+    image: turinio-ribojimas-db
+    volumes:
+      - dbfiles:/var/lib/mysql
+    healthcheck:
+      # Sveika tik tada, kai DB priima TCP prisijungimus ir kontroliniai duomenys jau įkelti
+      test: ["CMD", "mysql", "-h127.0.0.1", "-ustud", "-pstud", "-e", "SELECT 1 FROM turinio_ribojimas.bandymai LIMIT 1"]
+      interval: 5s
+      timeout: 5s
+      retries: 40
+
+  php:
+    build:
+      context: .
+      dockerfile: dockerphp
+    image: turinio-ribojimas-web
+    ports:
+      - "8080:80"
+    volumes:
+      - ./www:/var/www/html
+    environment:
+      DB_HOST: mysql
+      DB_USER: stud
+      DB_PASS: stud
+      DB_NAME: turinio_ribojimas
+    depends_on:
+      mysql:
+        condition: service_healthy
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - "8001:80"
+    environment:
+      PMA_HOST: mysql
+    depends_on:
+      - mysql
+
+volumes:
+  dbfiles:

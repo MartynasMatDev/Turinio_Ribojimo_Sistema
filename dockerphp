@@ -1,0 +1,14 @@
+# Web serveris: Apache + PHP 8.2 su mysqli plėtiniu
+FROM php:8.2-apache
+
+RUN docker-php-ext-install mysqli \
+ && echo "date.timezone=Europe/Vilnius" > /usr/local/etc/php/conf.d/laiko-zona.ini \
+ && echo "upload_max_filesize=2M" > /usr/local/etc/php/conf.d/ikelimas.ini
+
+ENV TZ=Europe/Vilnius
+
+# Programos kodas (paleidžiant per compose.yaml katalogas www dar ir primontuojamas,
+# todėl kodo pakeitimai matomi iš karto, be atvaizdo perkūrimo)
+COPY www/ /var/www/html/
+
+EXPOSE 80

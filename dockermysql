@@ -1,0 +1,14 @@
+# Duomenų bazė: MySQL 8.4 su sistemos lentelėmis ir kontroliniais duomenimis
+FROM mysql:8.4
+
+ENV MYSQL_DATABASE=turinio_ribojimas \
+    MYSQL_ROOT_PASSWORD=superstud \
+    MYSQL_USER=stud \
+    MYSQL_PASSWORD=stud \
+    TZ=Europe/Vilnius
+
+# Pirmą kartą startuojant (kai DB tuščia) importuojami šie failai abėcėlės tvarka:
+# 01_schema.sql – lentelės, 02_duomenys.sql – kontroliniai duomenys
+COPY sqldump/ /docker-entrypoint-initdb.d/
+
+CMD ["mysqld", "--character-set-server=utf8mb4", "--collation-server=utf8mb4_unicode_ci"]

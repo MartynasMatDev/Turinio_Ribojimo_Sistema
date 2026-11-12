@@ -1,0 +1,153 @@
+/* Turinio ribojimo sistema – stiliai */
+:root {
+    --pagrindine: #1f4e79;
+    --pagrindine-tamsi: #163a5c;
+    --akcentas: #2e86c1;
+    --fonas: #f2f5f9;
+    --kortele: #ffffff;
+    --tekstas: #1d2733;
+    --pilka: #6b7785;
+    --linija: #dde3ea;
+    --zalia: #1e8449;
+    --zalia-sviesi: #e3f4ea;
+    --raudona: #c0392b;
+    --raudona-sviesi: #fdecea;
+    --geltona-sviesi: #fff6dc;
+}
+* { box-sizing: border-box; }
+body {
+    margin: 0;
+    font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 15px;
+    color: var(--tekstas);
+    background: var(--fonas);
+    line-height: 1.5;
+}
+a { color: var(--akcentas); }
+h1 { font-size: 24px; margin: 0 0 12px; }
+h2 { font-size: 19px; margin: 0 0 12px; }
+h3 { font-size: 16px; margin: 0 0 8px; }
+
+/* Viršus */
+.virsus { background: var(--pagrindine); color: #fff; box-shadow: 0 2px 6px rgba(0,0,0,.15); }
+.virsus-vidus { max-width: 1240px; margin: 0 auto; padding: 12px 20px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.logotipas { display: flex; align-items: center; gap: 12px; color: #fff; text-decoration: none; }
+.logotipas small { display: block; opacity: .8; font-size: 12px; }
+.logo-zenklas { font-size: 28px; }
+.vartotojo-info { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.atsijungti { color: #fff; border: 1px solid rgba(255,255,255,.5); padding: 4px 12px; border-radius: 6px; text-decoration: none; }
+.atsijungti:hover { background: rgba(255,255,255,.15); }
+.meniu { background: var(--pagrindine-tamsi); }
+.meniu { display: flex; gap: 4px; padding: 0 calc((100% - 1200px) / 2); padding-left: max(20px, calc((100% - 1200px) / 2)); flex-wrap: wrap; }
+.meniu a { color: #d6e4f0; text-decoration: none; padding: 10px 16px; border-bottom: 3px solid transparent; }
+.meniu a:hover { color: #fff; }
+.meniu a.aktyvus { color: #fff; border-bottom-color: #5dade2; font-weight: 600; }
+
+.turinys { max-width: 1240px; margin: 0 auto; padding: 24px 20px 40px; }
+.apacia { text-align: center; color: var(--pilka); font-size: 13px; padding: 20px; border-top: 1px solid var(--linija); }
+
+/* Kortelės ir išdėstymas */
+.kortele { background: var(--kortele); border: 1px solid var(--linija); border-radius: 10px; padding: 22px; margin-bottom: 20px; box-shadow: 0 1px 3px rgba(0,0,0,.04); overflow-x: auto; }
+.kortele.siaura { max-width: 520px; }
+.dvi-kolonos { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start; }
+.dvi-kolonos.platesne-kaire { grid-template-columns: 2fr 1fr; }
+@media (max-width: 900px) { .dvi-kolonos, .dvi-kolonos.platesne-kaire { grid-template-columns: 1fr; } }
+
+/* Titulinis */
+.titulinis { display: grid; grid-template-columns: 1.4fr 1fr; gap: 32px; align-items: center; padding: 20px 0; }
+@media (max-width: 900px) { .titulinis { grid-template-columns: 1fr; } }
+.titulinis h1 { font-size: 34px; line-height: 1.2; color: var(--pagrindine); margin-bottom: 8px; }
+.titulinis .virsutinis { color: var(--pilka); font-size: 13px; text-transform: uppercase; letter-spacing: .04em; }
+.titulinis .autorius { font-size: 17px; }
+.savybes { padding-left: 18px; }
+.savybes li { margin-bottom: 6px; }
+.prisijungimas { padding: 28px; }
+
+/* Formos */
+label { display: block; font-weight: 600; margin: 12px 0 4px; font-size: 14px; }
+label.zymimasis { font-weight: normal; display: flex; gap: 8px; align-items: flex-start; }
+input[type=text], input[type=password], input[type=date], input[type=file], select, textarea {
+    width: 100%; padding: 9px 11px; border: 1px solid #c4ccd6; border-radius: 6px; font: inherit; background: #fff;
+}
+input:focus, select:focus, textarea:focus { outline: none; border-color: var(--akcentas); box-shadow: 0 0 0 3px rgba(46,134,193,.15); }
+.klaidingas { border-color: var(--raudona) !important; background: #fffafa !important; }
+.lauko-klaida { color: var(--raudona); font-size: 13px; margin-top: 4px; }
+.uzuomina { color: var(--pilka); font-size: 13px; margin-top: 4px; }
+form button.mygtukas, form .mygtukas { margin-top: 16px; }
+.mygtukas {
+    display: inline-block; background: var(--akcentas); color: #fff; border: none; border-radius: 6px;
+    padding: 9px 18px; font: inherit; font-weight: 600; cursor: pointer; text-decoration: none;
+}
+.mygtukas:hover { background: #2471a3; }
+.mygtukas.pilnas { width: 100%; }
+.mygtukas.antrinis { background: #e8eef4; color: var(--pagrindine); }
+.mygtukas.antrinis:hover { background: #d5e0eb; }
+.mygtukas.pavojingas { background: var(--raudona-sviesi); color: var(--raudona); }
+.mygtukas.pavojingas:hover { background: #f8d4cf; }
+.mygtukas.mazas { padding: 4px 10px; font-size: 13px; margin-top: 0 !important; }
+.veiksmai { white-space: nowrap; }
+.veiksmai form { display: inline; }
+
+.filtrai { display: flex; gap: 12px; flex-wrap: wrap; align-items: flex-end; margin-bottom: 12px; }
+.filtrai > div { min-width: 150px; }
+.filtrai label { margin-top: 0; }
+.filtrai .mygtukas { margin-top: 0; }
+
+/* Pranešimai */
+.pranesimas { padding: 12px 16px; border-radius: 8px; margin-bottom: 16px; border-left: 4px solid; }
+.pranesimas.sekme { background: var(--zalia-sviesi); border-color: var(--zalia); }
+.pranesimas.klaida { background: var(--raudona-sviesi); border-color: var(--raudona); }
+.pranesimas.info { background: var(--geltona-sviesi); border-color: #d4a017; }
+.pastaba { color: var(--pilka); font-size: 13px; }
+
+/* Lentelės */
+.lentele { width: 100%; border-collapse: collapse; margin: 8px 0; font-size: 14px; }
+.lentele th { text-align: left; background: #eef2f7; padding: 8px 10px; border-bottom: 2px solid var(--linija); font-weight: 600; }
+.lentele td { padding: 8px 10px; border-bottom: 1px solid var(--linija); vertical-align: top; }
+.lentele tr:hover td { background: #fafcfe; }
+.lentele .sk { text-align: right; }
+.lentele .centras { text-align: center; }
+.lentele td.ilgas { max-width: 280px; word-break: break-all; }
+.lentele tr.neaktyvus td { color: #9aa4af; }
+.lentele tr.pazymeta td { background: #eaf3fb; }
+.matrica td { vertical-align: middle; }
+
+/* Žymos */
+.zyma { display: inline-block; padding: 2px 9px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+.zyma.zalia { background: var(--zalia-sviesi); color: var(--zalia); }
+.zyma.raudona { background: var(--raudona-sviesi); color: var(--raudona); }
+.zyma.pilka { background: #eceff2; color: var(--pilka); }
+.zymos { display: flex; gap: 6px; flex-wrap: wrap; }
+.zenklelis { background: rgba(255,255,255,.18); padding: 3px 10px; border-radius: 20px; font-size: 13px; }
+.lentele .zenklelis { color: #fff; }
+.lentele .role-admin { background: #6c3483; }
+.lentele .role-saugos { background: #b9770e; }
+.lentele .role-direktorius { background: #1f618d; }
+
+.jungiklis { display: inline-flex; align-items: center; gap: 6px; font-weight: normal; margin: 0; cursor: pointer; }
+.jungiklis input { width: 18px; height: 18px; accent-color: var(--raudona); }
+.jungiklis span { font-size: 13px; color: var(--pilka); }
+
+/* Naršymo imitacija */
+.adreso-juosta { display: flex; gap: 8px; align-items: center; background: #eef2f7; padding: 10px; border-radius: 30px; margin: 16px 0 6px; }
+.adreso-juosta input { border-radius: 20px; flex: 1; }
+.adreso-juosta .mygtukas { margin-top: 0; border-radius: 20px; }
+.adreso-ikona { font-size: 20px; padding-left: 6px; }
+.rezultatas { display: flex; gap: 18px; align-items: center; padding: 18px 22px; border-radius: 10px; margin-top: 18px; }
+.rezultatas h2 { margin-bottom: 4px; }
+.rezultatas p { margin: 4px 0; }
+.rezultatas.leidziama { background: var(--zalia-sviesi); border: 1px solid #a9dfbf; }
+.rezultatas.leidziama h2 { color: var(--zalia); }
+.rezultatas.draudziama { background: var(--raudona-sviesi); border: 1px solid #f5b7b1; }
+.rezultatas.draudziama h2 { color: var(--raudona); }
+.rez-ikona { font-size: 42px; }
+
+/* Statistika */
+.statistika { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-bottom: 4px; }
+.stat { text-align: center; }
+.stat-skaicius { font-size: 34px; font-weight: 700; color: var(--pagrindine); }
+
+.puslapiai { display: flex; gap: 4px; flex-wrap: wrap; margin-top: 12px; }
+.puslapiai a { padding: 4px 10px; border: 1px solid var(--linija); border-radius: 4px; text-decoration: none; }
+.puslapiai a.aktyvus { background: var(--akcentas); color: #fff; border-color: var(--akcentas); }
+pre.kodas { background: #f4f6f8; border: 1px solid var(--linija); padding: 10px; border-radius: 6px; font-size: 13px; overflow-x: auto; }

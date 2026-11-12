@@ -1,0 +1,26 @@
+# IDE (PhpStorm / IntelliJ, VS Code)
+.idea/
+.vscode/
+*.iml
+
+# Operacinės sistemos šiukšlės
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Docker / vietiniai aplinkos nustatymai
+.env
+docker-compose.override.yml
+compose.override.yaml
+
+# Duomenų bazės eksportai ir atsarginės kopijos (pradiniai duomenys sqldump/ lieka)
+*.sql.gz
+*.bak
+backup/
+
+# Archyvai ir laikini failai
+*.zip
+*.tar
+*.log
+*.tmp
+*~
