@@ -62,6 +62,14 @@ Adresas: http://localhost/turinio_ribojimas/
 - `sqldump/` – DB struktūra ir kontroliniai duomenys
 - `pavyzdiniai_failai/` – CSV failai mokinių importui (teisingas ir su klaidomis)
 
+## Diagramos
+
+### Panaudojimo atvejų diagrama
+![Panaudojimo atvejų diagrama](docs/panaudos_diagrama.png)
+
+### Esybių ryšių diagrama (duomenų bazės loginis modelis)
+![Esybių ryšių diagrama](docs/esybes_diagrama.png)
+
 ## Ekrano nuotraukos
 
 ### Prisijungimas
