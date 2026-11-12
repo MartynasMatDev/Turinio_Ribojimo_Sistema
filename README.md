@@ -3,6 +3,20 @@
 KTU T120B145 „Kompiuterių tinklai ir internetinės technologijos“ – IT projektas.
 Autorius: Martynas Matutis. Technologijos: PHP, MySQL, Docker.
 
+## Užduotis
+
+![Projekto užduotis](docs/uzduotis.png)
+
+Sistemos paskirtis – mokyklos bevielio tinklo turinio ribojimas:
+
+- Trys kontroliuojamų vartotojų (mokinių) rūšys: pradinukai, pagrindiniai, gimnazistai.
+- Kontroliuojami URL suskirstyti į kategorijas: porno, e. pirkimai, lažybos, žaidimai, socialiniai tinklai ir kt.
+- **Administratorius** užkrauna iš išorinio failo mokinių sąrašą su klasių numeriais ir prisijungimo vardais.
+- **Saugos įgaliotinis** suformuoja ir redaguoja kategorijas bei į jas patenkančių URL sąrašus.
+- **Direktorius** pažymi, kurios kategorijos uždraustos kurioms mokinių rūšims.
+- **Mokiniai**, prisijungę prie sistemos, langelyje imituoja bandymą atidaryti URL, o sistema praneša, ar tai leidžiama.
+- Papildomai: mokinių bandymai registruojami, o saugos įgaliotinis mato mokinius, bandžiusius atidaryti blokuojamus URL.
+
 ## Paleidimas (Docker)
 
 ```bash
@@ -47,3 +61,25 @@ Adresas: http://localhost/turinio_ribojimas/
 - `www/` – PHP kodas (`admin_*`, `saugos_*`, `direktorius_*`, `mokinys_*` puslapiai, `inc/` – bendras kodas)
 - `sqldump/` – DB struktūra ir kontroliniai duomenys
 - `pavyzdiniai_failai/` – CSV failai mokinių importui (teisingas ir su klaidomis)
+
+## Ekrano nuotraukos
+
+### Prisijungimas
+![Titulinis puslapis](docs/ekranai/01_titulinis.png)
+
+### Mokinys – prieigos tikrinimas
+![Prieiga draudžiama](docs/ekranai/03_mokinys_draudziama.png)
+![Prieiga leidžiama](docs/ekranai/04_mokinys_leidziama.png)
+
+### Saugos įgaliotinis
+![Pažeidėjai](docs/ekranai/09_saugos_pazeidejai.png)
+![Kategorijos](docs/ekranai/12_saugos_kategorijos.png)
+![URL sąrašai](docs/ekranai/15_saugos_url.png)
+
+### Direktorius
+![Draudimai grupėms](docs/ekranai/16_direktorius_draudimai.png)
+![Statistika](docs/ekranai/17_direktorius_statistika.png)
+
+### Administratorius
+![Apžvalga](docs/ekranai/18_admin_apzvalga.png)
+![Mokinių importas](docs/ekranai/20_admin_importas_sekme.png)
